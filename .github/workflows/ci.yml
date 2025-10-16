@@ -114,14 +114,14 @@ jobs:
       - name: Setup Task
         uses: go-task/setup-task@v1
 
+      - name: create Apps
+        run: task create:apps
+
       - name: Install dependencies
         run: |
           npm install
           cd apps
           npm install
-
-      - name: create Apps
-        run: task create:apps
 
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
