@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Template de nouveau project electron",
   "scripts": {
-    "release": "release-it"
+    "release": "release-it",
+    "lint:markdown": "markdownlint README.md"
   },
   "repository": {
     "type": "git",
