@@ -1,0 +1,1 @@
+npm create tauri-app@latest apps -- --yes
