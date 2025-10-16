@@ -1,0 +1,25 @@
+# Dockerfile pour CI Tauri v2 compatible WebKitGTK 4.1 et JavaScriptCoreGTK 4.1
+FROM ubuntu:24.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && \
+    apt-get install -y \
+    curl wget git build-essential pkg-config libssl-dev \
+    libgtk-3-dev libglib2.0-dev libwebkit2gtk-4.0-dev libsoup-3.0-dev \
+    ca-certificates libappindicator3-dev libjavascriptcoregtk-4.1-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Node.js (LTS)
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs
+
+# Rust
+RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+# Tauri CLI
+RUN npm install -g @tauri-apps/cli
+
+# Pour le debug
+RUN echo "Docker image for Tauri v2 CI with WebKitGTK 4.1 and JavaScriptCoreGTK 4.1 support"
