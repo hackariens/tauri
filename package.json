@@ -19,6 +19,7 @@
   "homepage": "https://github.com/hackariens/tauri#readme",
   "devDependencies": {
     "markdownlint-cli": "^0.45.0",
-    "release-it": "^19.0.5"
+    "release-it": "^19.0.5",
+    "yaml-lint": "^1.7.0"
   }
 }
