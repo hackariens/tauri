@@ -41,7 +41,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Lint markdown files
+      - name: Lint all
         run: task lint:all
 
   test:
