@@ -90,6 +90,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - os: ubuntu-24.04
+            platform: linux
           - os: windows-2025
             platform: win
           - os: macos-26
@@ -110,6 +112,12 @@ jobs:
       - name: Setup Task
         uses: go-task/setup-task@v1
 
+      - name: Install system dependencies (Linux only)
+        if: matrix.platform == 'linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential curl wget file libwebkit2gtk-4.1-dev libssl-dev libxdo-dev libayatana-appindicator3-dev librsvg2-dev
+
       - name: create Apps
         run: task create:apps
 
@@ -118,6 +126,7 @@ jobs:
           npm install
           cd apps
           npm install
+      
 
       - name: Build Tauri app
         run: |
