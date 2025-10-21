@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Template de nouveau project electron",
   "scripts": {
-    "release": "release-it",
-    "lint:markdown": "markdownlint README.md"
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -18,8 +17,8 @@
   },
   "homepage": "https://github.com/hackariens/tauri#readme",
   "devDependencies": {
-    "markdownlint-cli": "^0.45.0",
-    "release-it": "^19.0.5",
-    "yaml-lint": "^1.7.0"
+    "markdownlint-cli": "0.45.*",
+    "release-it": "19.0.*",
+    "yaml-lint": "1.7.*"
   }
 }
