@@ -138,4 +138,4 @@ jobs:
         with:
           name: tauri-app-${{ matrix.platform }}-${{ github.sha }}
           path: apps/src-tauri/target/release/
-          retention-days: 7
+          retention-days: 1
