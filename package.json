@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/hackariens/tauri#readme",
   "devDependencies": {
-    "release-it": "19.0.*"
+    "release-it": "19.2.*"
   }
 }
